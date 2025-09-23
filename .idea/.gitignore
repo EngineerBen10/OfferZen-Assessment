@@ -1,0 +1,58 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/.idea.OfferZen-Assessment.iml
+/projectSettingsUpdater.xml
+/contentModel.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Build results
+bin/
+obj/
+
+# Rider / VS Code / VS for Mac
+.idea/
+.vscode/
+.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Dotnet CLI artifacts
+*.db
+*.db-shm
+*.db-wal
+
+# EF Core Migrations snapshots
+**/Migrations/*Snapshot.cs
+
+# Auto-generated files
+*.generated.cs
+
+# Logs
+*.log
+logs/
+
+# Test results
+TestResults/
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets / Environment settings
+.env
+secrets.json
+
+# NCrunch
+*.ncrunch*
+*.nunit.xml
