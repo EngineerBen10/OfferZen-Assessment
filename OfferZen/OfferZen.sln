@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfferZen.Core", "OfferZen.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfferZen.Application", "OfferZen.Application\OfferZen.Application.csproj", "{C887C6F9-E632-480C-AE67-3A04B178602E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfferZen.Api", "OfferZen.Api\OfferZen.Api.csproj", "{6745AAA8-437C-4F0A-92E0-1A93C37BE43C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C887C6F9-E632-480C-AE67-3A04B178602E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C887C6F9-E632-480C-AE67-3A04B178602E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C887C6F9-E632-480C-AE67-3A04B178602E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6745AAA8-437C-4F0A-92E0-1A93C37BE43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6745AAA8-437C-4F0A-92E0-1A93C37BE43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6745AAA8-437C-4F0A-92E0-1A93C37BE43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6745AAA8-437C-4F0A-92E0-1A93C37BE43C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

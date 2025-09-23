@@ -1,6 +1,5 @@
 using MediatR;
 using OfferZen.Core.Dtos;
-using OfferZen.Core.Entities;
 using OfferZen.Core.Interfaces;
 
 namespace OfferZen.Application.Queries.ProductQueries;
