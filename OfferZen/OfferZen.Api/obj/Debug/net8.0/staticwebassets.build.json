@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "45VqKqIqub0NttbyxAVI+Zxth1rVuCZn7UBsXYih/5s=",
+  "Source": "OfferZen.Api",
+  "BasePath": "_content/OfferZen.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
