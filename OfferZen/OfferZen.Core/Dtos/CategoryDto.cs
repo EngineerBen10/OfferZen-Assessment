@@ -1,12 +1,12 @@
 namespace OfferZen.Core.Dtos;
 
-public class CategoryDto
+public record CategoryDto
 {
-    public int Id { get; set; }
-    public string Name { get; set; } = null!;
-    public string Description { get; set; } = null!;
+    public int Id { get; init; }
+    public string Name { get; init; } = null!;
+    public string Description { get; init; } = null!;
     
-    public int? ParentCategoryId { get; set; }
+    public int? ParentCategoryId { get; init; }
 
     public List<CategoryDto> SubCategories { get; set; } = new();
 }

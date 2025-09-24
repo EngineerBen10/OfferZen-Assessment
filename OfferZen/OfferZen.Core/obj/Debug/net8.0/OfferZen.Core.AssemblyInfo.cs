@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OfferZen.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eba16ba1ec00e42c58ecaa9facdb2710105d3f5b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d5d322ffcdd84bcc74d39cb2f23409f3ff6b8bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("OfferZen.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OfferZen.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

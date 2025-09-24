@@ -1,12 +1,12 @@
 namespace OfferZen.Core.Dtos;
 
-public class ProductDto
+public record ProductDto
 {
-    public int Id { get; set; }
-    public string Name { get; set; } = null!;
-    public string Description { get; set; } = null!;
-    public Guid Sku { get; set; }
-    public decimal Price { get; set; }
-    public int Quantity { get; set; }
-    public int CategoryId { get; set; }
+    public int Id { get; init; }
+    public string Name { get; init; } = null!;
+    public string Description { get; init; } = null!;
+    public Guid Sku { get; init; }
+    public decimal Price { get; init; }
+    public int Quantity { get; init; }
+    public int CategoryId { get; init; }
 }
