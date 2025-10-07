@@ -12,7 +12,7 @@ using OfferZen.Infrastructure.Data;
 namespace OfferZen.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250924070231_InitialCreate")]
+    [Migration("20251007084615_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -48,7 +48,7 @@ namespace OfferZen.Infrastructure.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("OfferZen.Core.Entities.Product", b =>
@@ -86,7 +86,7 @@ namespace OfferZen.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("OfferZen.Core.Entities.Category", b =>
