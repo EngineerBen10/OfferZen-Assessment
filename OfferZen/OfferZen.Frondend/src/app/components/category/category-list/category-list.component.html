@@ -1,0 +1,19 @@
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<table *ngIf="categories.length" class="category-table">
+  <thead>
+    <tr>
+    
+      <th>Name</th>
+      <th>Description</th>     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">    
+      <td>{{ category.name }}</td>
+      <td>{{ category.description || 'N/A' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!categories.length && !errorMessage">No categories found.</div>

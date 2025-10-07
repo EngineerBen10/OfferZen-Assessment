@@ -14,6 +14,16 @@ public class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddApp(builder.Configuration);
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAngularApp",
+                policy =>
+                {
+                    policy.WithOrigins("http://localhost:4200")  // your Angular dev URL
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+        });
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -27,7 +37,7 @@ public class Program
 
         app.UseAuthorization();
 
-
+        app.UseCors("AllowAngularApp");
         app.MapControllers();
 
         app.Run();
