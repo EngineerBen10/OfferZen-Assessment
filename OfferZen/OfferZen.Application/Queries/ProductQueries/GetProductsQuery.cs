@@ -5,12 +5,12 @@ using OfferZen.Core.Interfaces;
 namespace OfferZen.Application.Queries.ProductQueries;
 
 
- public record GetProductQuery(ProductQueryDto ProductQuery) : IRequest<PaginatedResult<ProductDto>>;
+ public record GetProductsQuery(ProductQueryDto ProductQuery) : IRequest<PaginatedResult<ProductDto>>;
 
  public class GetProductQueryHandler(IProductRepository productRepository)
-     : IRequestHandler<GetProductQuery, PaginatedResult<ProductDto>>
+     : IRequestHandler<GetProductsQuery, PaginatedResult<ProductDto>>
  {
-     public async Task<PaginatedResult<ProductDto>> Handle(GetProductQuery request, CancellationToken cancellationToken)
+     public async Task<PaginatedResult<ProductDto>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
      {
          return await productRepository.GetProductsAsync(request.ProductQuery, cancellationToken);
      }

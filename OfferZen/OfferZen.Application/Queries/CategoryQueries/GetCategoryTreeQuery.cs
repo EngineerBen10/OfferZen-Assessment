@@ -5,12 +5,12 @@ using OfferZen.Core.Interfaces;
 namespace OfferZen.Application.Queries.CategoryQueries;
 
 
-public record GetCategoryTreeCommand(): IRequest<IEnumerable<CategoryDto>>;
+public record GetCategoryTreeQuery(): IRequest<IEnumerable<CategoryDto>>;
 
 public class GetCategoryTreeQueryHandler(ICategoryRepository categoryRepository)
-    : IRequestHandler<GetCategoryTreeCommand, IEnumerable<CategoryDto>>
+    : IRequestHandler<GetCategoryTreeQuery, IEnumerable<CategoryDto>>
 {
-    public async Task<IEnumerable<CategoryDto>> Handle(GetCategoryTreeCommand request,
+    public async Task<IEnumerable<CategoryDto>> Handle(GetCategoryTreeQuery request,
         CancellationToken cancellationToken)
     {
         return await categoryRepository.GetCategoriesTreeAsync(cancellationToken);

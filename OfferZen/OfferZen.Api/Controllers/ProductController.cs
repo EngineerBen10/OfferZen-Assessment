@@ -1,14 +1,14 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using OfferZen.Application.Commands.ProductCommands;
-using OfferZen.Application.Queries.CategoryQueries;
 using OfferZen.Application.Queries.ProductQueries;
+using OfferZen.Core.Dtos;
 using OfferZen.Core.Entities;
 
 namespace OfferZen.Api.Controllers;
 
 
-[Route("api/[controller]")]
+[Route("api/products")]
 [ApiController]
 public class ProductController(ISender sender) : ControllerBase
 {
@@ -21,8 +21,14 @@ public class ProductController(ISender sender) : ControllerBase
           return Ok(result);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("")]
+    public async Task<IActionResult> GetProductsAsync([FromBody] ProductQueryDto productQueryDto)
+    {
+        var result = await sender.Send(new GetProductsQuery(productQueryDto));
 
+        return Ok(result);
+    }
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetProductByIdAsync([FromRoute] int id)
     {
         var result = await sender.Send(new GetProductByIdQuery(id));
