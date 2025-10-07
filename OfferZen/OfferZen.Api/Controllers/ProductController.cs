@@ -22,7 +22,7 @@ public class ProductController(ISender sender) : ControllerBase
     }
 
     [HttpGet("")]
-    public async Task<IActionResult> GetProductsAsync([FromBody] ProductQueryDto productQueryDto)
+    public async Task<IActionResult> GetProductsAsync([FromQuery] ProductQueryDto productQueryDto)
     {
         var result = await sender.Send(new GetProductsQuery(productQueryDto));
 

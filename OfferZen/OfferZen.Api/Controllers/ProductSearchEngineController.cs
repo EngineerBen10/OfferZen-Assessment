@@ -16,7 +16,7 @@ public class ProductSearchEngineController(ISender sender) : ControllerBase
 
 
     [HttpGet("")]
-    public async Task<IActionResult> GetProductsSearchEngineAsync([FromBody] ProductQueryDto productQueryDto)
+    public async Task<IActionResult> GetProductsSearchEngineAsync([FromQuery] ProductQueryDto productQueryDto)
     {
         var result = await sender.Send(new GetProductsSearchEngineQuery(productQueryDto));
 
