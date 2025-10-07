@@ -1,0 +1,61 @@
+<div class="product-add-container">
+  <h2>Add New Product</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Product Name</label>
+      <input id="name" type="text" formControlName="name" />
+      <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+        Name is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <small *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched">
+        Description is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" type="number" formControlName="price" />
+      <small *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+        Enter a valid price.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input id="quantity" type="number" formControlName="quantity" />
+      <small *ngIf="productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched">
+        Enter a valid quantity.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select id="category" formControlName="categoryId">
+        <option value="">Select Category</option>
+        <option *ngFor="let category of categories" [value]="category.id">
+          {{ category.name }}
+        </option>
+      </select>
+      <small *ngIf="productForm.get('categoryId')?.invalid && productForm.get('categoryId')?.touched">
+        Category is required.
+      </small>
+    </div>
+
+    <div class="messages">
+      <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+      <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" [disabled]="isSubmitting">Save Product</button>
+     <button type="button" class="cancel" (click)="cancel()">Cancel</button>
+
+    </div>
+  </form>
+</div>
