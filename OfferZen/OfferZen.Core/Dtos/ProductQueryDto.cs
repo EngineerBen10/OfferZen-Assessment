@@ -7,4 +7,6 @@ public class ProductQueryDto
     
     public string CategoryName { get; set; } = null!;
     public string ProductName { get; set; } = null!;
+
+    public string Search { get; set; } = null!;
 }

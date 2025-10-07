@@ -1,6 +1,6 @@
 @OfferZen.Api_HostAddress = http://localhost:5286
 
-GET {{OfferZen.Api_HostAddress}}/weatherforecast/
+GET {{OfferZen.Api_HostAddress}}/products/
 Accept: application/json
 
 ###
