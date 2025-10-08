@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Search products..." />
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search" />
     <button (click)="onSearch()">Search</button>
   `
 })

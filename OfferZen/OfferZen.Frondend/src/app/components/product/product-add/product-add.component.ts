@@ -34,7 +34,7 @@ export class ProductAddComponent implements OnInit {
       description: ['', Validators.required],
       price: [0, [Validators.required, Validators.min(0)]],
       quantity: [0, [Validators.required, Validators.min(0)]],
-      categoryId: ['', Validators.required],
+      categoryId: [0, Validators.required],
     });
 
     this.loadCategories();
@@ -60,7 +60,6 @@ export class ProductAddComponent implements OnInit {
     const newProduct: Product = {
       id: 0,
       ...this.productForm.value,
-      sku: crypto.randomUUID(),
       createdAt: new Date(),
     };
 

@@ -4,19 +4,21 @@ import { CategoryListComponent } from './components/category/category-list/categ
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
 import { ProductAddComponent } from './components/product/product-add/product-add.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CategoryListComponent, ProductListComponent],
+  imports: [RouterModule],
 
   template:`<div class="app-container">
-              <h1>OfferZen Product Management</h1>
-                <app-product-list></app-product-list>
-            <section>
+              <h1>OfferZen Product Management</h1>        
+                <router-outlet></router-outlet>
+              
+            <!-- <section>
                 <h2>Categories</h2>
                 <app-category-list></app-category-list>
-            </section>
+            </section> -->
 
             </div>`,
   styleUrl: './app.component.scss'

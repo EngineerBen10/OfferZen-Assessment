@@ -42,7 +42,9 @@ public class ProductRepository(AppDbContext dbContext) : IProductRepository
                 Name = p.Name,
                 Description = p.Description,
                 Price = p.Price,
-                CategoryName = p.Category.Name
+                CategoryName = p.Category.Name,
+                Quantity = p.Quantity
+                
             })
             .ToListAsync(token);
 
@@ -67,7 +69,7 @@ public class ProductRepository(AppDbContext dbContext) : IProductRepository
 
         return product;
     }
-    // 🔹 3. Add new product
+    // Add new product
     public async Task<Product> AddProductAsync(Product product, CancellationToken cancellationToken)
     {
         if (product == null)

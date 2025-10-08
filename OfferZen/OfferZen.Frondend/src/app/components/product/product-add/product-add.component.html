@@ -37,8 +37,8 @@
     <div class="form-group">
       <label for="category">Category</label>
       <select id="category" formControlName="categoryId">
-        <option value="">Select Category</option>
-        <option *ngFor="let category of categories" [value]="category.id">
+        <option [ngValue]="null">Select Category</option>
+        <option *ngFor="let category of categories" [ngValue]="category.id">
           {{ category.name }}
         </option>
       </select>
@@ -54,7 +54,7 @@
 
     <div class="actions">
       <button type="submit" [disabled]="isSubmitting">Save Product</button>
-     <button type="button" class="cancel" (click)="cancel()">Cancel</button>
+      <button type="button" class="cancel" (click)="cancel()">Cancel</button>
 
     </div>
   </form>

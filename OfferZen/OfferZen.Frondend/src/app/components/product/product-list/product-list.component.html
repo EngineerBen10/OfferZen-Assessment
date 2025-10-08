@@ -1,9 +1,7 @@
 <div class="product-list-container">
   <h2>Products</h2>
-  <app-product-search (search)="onSearch($event)"></app-product-search>
-
-  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-
+    <app-product-search (search)="onSearch($event)"></app-product-search>
+    <button class="add-product-btn" (click)="addProduct()">Add Product</button>
   <table class="product-table">
     <thead>
       <tr>

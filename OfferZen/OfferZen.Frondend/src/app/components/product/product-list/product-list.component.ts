@@ -2,12 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { ProductDto } from '../../../models/product-dto.model';
-import { Product } from '../../../models/product.model';
+import { Router } from '@angular/router';
 import { PaginatedResult } from '../../../models/pagination-result.model';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ProductSearchComponent } from '../product-search/product-search.component';
-import { ProductAddComponent } from '../product-add/product-add.component';
 
 @Component({
   selector: 'app-product-list',
@@ -29,7 +28,7 @@ export class ProductListComponent implements OnInit {
       loading = false;
       errorMessage = '';
 
-    constructor(private productService: ProductService) {}
+    constructor(private router : Router, private productService: ProductService) {}
 
     ngOnInit(): void {
          this.loadProducts();
@@ -76,5 +75,9 @@ export class ProductListComponent implements OnInit {
       this.pageNumber--;
       this.loadProducts();
     }
+  }
+
+   addProduct() {
+    this.router.navigate(['/products/add']);
   }
 }
