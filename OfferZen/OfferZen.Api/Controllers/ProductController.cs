@@ -21,6 +21,15 @@ public class ProductController(ISender sender) : ControllerBase
           return Ok(result);
     }
 
+    [HttpPut("")]
+
+    public async Task<IActionResult> UpdateProductAsync([FromBody] Product product)
+    {
+        var result = await sender.Send(new UpdateProductCommand(product));
+        
+        return Ok(result);
+    }
+
     [HttpGet("")]
     public async Task<IActionResult> GetProductsAsync([FromQuery] ProductQueryDto productQueryDto)
     {

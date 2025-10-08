@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace OfferZen.Core.Entities;
 
 public class Category
@@ -8,6 +10,10 @@ public class Category
     public int? ParentCategoryId { get; set; }
 
     public Category? ParentCategory { get; set; }
-    public ICollection<Category> SubCategories { get; set; } = new List<Category>();
+
+    [JsonIgnore]
+    public ICollection<Category>? SubCategories { get; set; } = new List<Category>();
+
+    [JsonIgnore]
     public ICollection<Product> Products { get; set; } = new List<Product>();
 }

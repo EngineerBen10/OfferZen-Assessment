@@ -80,4 +80,8 @@ export class ProductListComponent implements OnInit {
    addProduct() {
     this.router.navigate(['/products/add']);
   }
+
+    editProduct(id: number) {
+    this.router.navigate(['/products/edit', id]);
+  }
 }
