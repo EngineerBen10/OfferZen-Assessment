@@ -9,4 +9,5 @@ export interface Product {
   quantity: number;
   categoryId: number;
   createdAt: Date;
+  updatedAt?: Date;
 }

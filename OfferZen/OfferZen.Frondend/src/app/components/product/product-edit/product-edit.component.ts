@@ -79,6 +79,7 @@ export class ProductEditComponent implements OnInit {
       id: 0,
       ...this.productForm.value,
       createdAt: new Date(),
+      updatedAt: this.product.updatedAt
     };
 
     this.productService.updateProduct(this.productId, newProduct).subscribe({
@@ -92,7 +93,4 @@ export class ProductEditComponent implements OnInit {
       },
     });
   }
-
-  
-
 }

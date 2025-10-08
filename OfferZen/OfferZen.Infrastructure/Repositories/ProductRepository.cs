@@ -92,14 +92,14 @@ public class ProductRepository(AppDbContext dbContext) : IProductRepository
     }
 
     // Update product
-    public async Task<Product> UpdateProductAsync(Product product, CancellationToken cancellationToken)
+    public async Task<Product> UpdateProductAsync(int id, Product product, CancellationToken cancellationToken)
     {
         if (product == null)
             throw new ArgumentNullException(nameof(product));
 
-        var existing = await dbContext.Product.FindAsync(new object[] { product.Id }, cancellationToken);
+        var existing =   await dbContext.Product.FindAsync(new object[] { product.Id }, cancellationToken);
 
-        if (existing == null)
+        if (existing == null && existing.Id != id)
             throw new KeyNotFoundException($"Product with ID {product.Id} not found.");
 
         existing.Name = product.Name;
