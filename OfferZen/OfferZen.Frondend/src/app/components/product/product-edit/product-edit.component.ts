@@ -18,7 +18,7 @@ import { get } from 'http';
 export class ProductEditComponent implements OnInit {
   productForm!: FormGroup;
   categories: Category[] = [];
-  product: Product = null!;
+  product: Product = {} as Product;
   productId!: number;
   errorMessage = '';
   successMessage = '';
@@ -32,7 +32,7 @@ export class ProductEditComponent implements OnInit {
   ngOnInit(): void {
     this.productId = this.route.snapshot.params['id'];
     this.initForm();
-    this.getProduct();
+    this.loadProduct();
     this.loadCategories();
   }
 
@@ -42,6 +42,7 @@ export class ProductEditComponent implements OnInit {
       description: ['', Validators.required],
       price: [0, [Validators.required, Validators.min(0)]],
       quantity: [0, [Validators.required, Validators.min(0)]],
+      categoryId: [0, Validators.required],
     });
 
   }
@@ -53,9 +54,13 @@ export class ProductEditComponent implements OnInit {
     });
   }
 
-  getProduct(): void {
+  loadProduct(): void {
     this.productService.getProduct(this.productId).subscribe({
-      next: (product) => (this.product = product),
+      next: (product) => {
+        this.productForm.patchValue(product)
+
+        this.product = product;
+      },
       error: () => this.errorMessage = 'Error loading product',
     });
 
@@ -75,14 +80,14 @@ export class ProductEditComponent implements OnInit {
     this.errorMessage = '';
     this.successMessage = '';
 
-    const newProduct: Product = {
-      id: 0,
+    const updateProduct: Product = {
+      id: this.product.id,
       ...this.productForm.value,
       createdAt: new Date(),
       updatedAt: this.product.updatedAt
     };
 
-    this.productService.updateProduct(this.productId, newProduct).subscribe({
+    this.productService.updateProduct(this.productId, updateProduct).subscribe({
       next: () => {
         this.successMessage = 'Product added successfully!';
         setTimeout(() => this.router.navigate(['/products']), 1200);

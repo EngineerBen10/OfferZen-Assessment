@@ -4,22 +4,22 @@
   <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input id="name" formControlName="name" type="text" [value]="product.name" />
+      <input id="name" formControlName="name" type="text" />
     </div>
 
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea id="description" formControlName="description">{{product.description}}</textarea>
+      <textarea id="description" formControlName="description"></textarea>
     </div>
 
     <div class="form-group">
       <label for="price">Price</label>
-      <input id="price" formControlName="price" type="number" [value]="product.price" />
+      <input id="price" formControlName="price" type="number" />
     </div>
 
     <div class="form-group">
       <label for="quantity">Quantity</label>
-      <input id="quantity" formControlName="quantity" type="number" [value]="product.quantity" />
+      <input id="quantity" formControlName="quantity" type="number" />
     </div>
 
     <div class="form-group">

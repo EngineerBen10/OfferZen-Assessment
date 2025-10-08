@@ -106,6 +106,7 @@ public class ProductRepository(AppDbContext dbContext) : IProductRepository
         existing.Description = product.Description;
         existing.Price = product.Price;
         existing.CategoryId = product.CategoryId;
+        existing.Quantity = product.Quantity;
 
         dbContext.Product.Update(existing);
         await dbContext.SaveChangesAsync(cancellationToken);
