@@ -10,6 +10,7 @@ import { get } from 'http';
 
 @Component({
   selector: 'app-product-edit',
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './product-edit.component.html',
   styleUrl: './product-edit.component.scss'
@@ -70,7 +71,7 @@ export class ProductEditComponent implements OnInit {
     this.router.navigate(['/products']);
   }
 
-    onSubmit(): void {
+  onSubmit(): void {
     if (this.productForm.invalid) {
       this.errorMessage = 'Please fill in all required fields correctly.';
       return;

@@ -39,6 +39,6 @@ export class ProductService {
     }
 
     deleteProduct(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.apiUrl}/${id}`);
+    return this.http.delete<boolean>(`${this.apiUrl}/api/products/${id}`,);
   }
 }
